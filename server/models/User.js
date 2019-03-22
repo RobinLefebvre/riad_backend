@@ -1,5 +1,5 @@
 const fs = require('fs');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const UTIL = require('../../util');
 let Users = [];
