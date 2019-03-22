@@ -9,6 +9,8 @@ router.get('/list', (request, response, next) =>
     response.end( UTIL.jsonify( Posts.getAll() ) ); 
 })
 
+
+
 router.post('/add', (request, response, next) => 
 {
     const input = request.body;
