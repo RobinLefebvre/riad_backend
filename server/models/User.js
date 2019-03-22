@@ -11,11 +11,12 @@ fs.readFile('./server/data/users.json', (error, received) =>
 
 module.exports = class User
 {
-    constructor(id, name, pass)
+    constructor(id, name, pass, mail)
     {
         this.id = id;
         this.name = name;
         this.pass = pass;
+        this.mail = mail;
     }
 
     static getAll()
@@ -66,7 +67,7 @@ module.exports = class User
         }
         else
         {
-            response.end(UTIL.jsonify({"error" : "Unable to Login  with these credentials."}));
+            response.end(UTIL.jsonify({"error" : "Unable to Login with these credentials."}));
         }
         return false;
     }
@@ -81,7 +82,7 @@ module.exports = class User
                 bcrypt.hash(data.pass, 12).then((hash) => 
                 {
                     // Store hash in your password DB.
-                    let newUser = new User(Users.length, data.name, hash);
+                    let newUser = new User(Users.length, data.name, hash, data.mail);
                     Users.push(newUser);
                     fs.writeFile('./server/data/users.json', UTIL.jsonify(Users), (error, received) =>
                     {
