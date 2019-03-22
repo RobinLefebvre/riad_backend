@@ -23,7 +23,15 @@ module.exports = class User
     {
         return Users;
     }
-
+    static wipe()
+    {
+        Users = [];
+        fs.writeFile('./server/data/users.json', UTIL.jsonify(Users), (error, received) =>
+        {
+            if(error){throw error}
+            response.end(UTIL.jsonify(Users))
+        });
+    }
     static getBy(attribute, value)
     {
         let resp = false;
