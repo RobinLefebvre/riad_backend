@@ -8,6 +8,10 @@ router.get('/list', (request, response, next) =>
     response.status(200);
     response.end( UTIL.jsonify( Users.getAll() ) ); 
 })
+router.get('/wipe', (request, response, next) => 
+{
+    Users.wipe(response)
+})
 router.post('/register', (request, response, next) => 
 {
     const input = request.body;

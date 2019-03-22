@@ -23,7 +23,7 @@ module.exports = class User
     {
         return Users;
     }
-    static wipe()
+    static wipe(response)
     {
         Users = [];
         fs.writeFile('./server/data/users.json', UTIL.jsonify(Users), (error, received) =>
