@@ -107,9 +107,9 @@ module.exports = class User
         let ret = true;
         for(let attr in data)
         {
-            if(attr !== "name" && attr !== "pass")
+            if(attr !== "name" && attr !== "pass" && attr !== "mail")
             {
-                delete data[attr]; 
+                delete data[attr]; // Delete any keys that doesn't fit schema
             }
             if(data[attr].toString().trim === "")
             {
