@@ -7,7 +7,23 @@ const UTIL =
             throw error;
         }
     },
-
+    getDate : () =>
+    {
+        let today = new Date(); 
+        let dd = today.getDate(); 
+        let mm = today.getMonth() + 1; 
+        let yyyy = today.getFullYear();
+        let hh = today.getHours();
+        let min = today.getMinutes();
+    
+        if (dd < 10) { dd = '0' + dd; } 
+        if (mm < 10) { mm = '0' + mm; } 
+        if (min < 10) { min = '0' + min; } 
+        if (hh < 10) { hh = '0' + hh; } 
+    
+        let now = dd + '/' + mm + '/' + yyyy + ' ' + hh + ':' + min;
+        return now;
+    },
     jsonify : (data) => 
     {
       return JSON.stringify(data, null, 4);

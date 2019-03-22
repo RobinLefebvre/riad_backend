@@ -12,7 +12,7 @@ const APP = express();
 
 
 // Every request passes throught Logging for now.
-APP.use(LOG(':method request on URL : :url \\nStatus :status \\nSize :res[content-length] bytes \\nTime : :response-time ms')); 
+APP.use(LOG('[:date[clf]]\n:method request on URL : :url \nStatus :status| Size :res[content-length] bytes| Time : :response-time ms')); 
 // POST requests pass through Parsing
 APP.use(R_PARSER.urlencoded({extended : false}));
 // POST requests pass through Parsing
