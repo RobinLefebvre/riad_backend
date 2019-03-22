@@ -1,7 +1,7 @@
 {
   "name": "riad_backend",
   "version": "1.0.0",
-  "description": "REST API for the Eden Project",
+  "description": "REST API RIAD",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,9 +10,11 @@
   "author": "LEFEBVRE Robin",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs":"^2.4.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
+    "googleapis": "^27.0.0",
     "morgan": "^1.9.0"
   }
 }
