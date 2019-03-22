@@ -1,6 +1,7 @@
 // Routes are just a fancy way of injecting require()
 const routes = [];
 routes.push( {name : '/users', ref : require("./server/routes/users") } );
+routes.push( {name : '/posts', ref : require("./server/routes/posts") } );
 
 const express = require('express');
 const LOG = require('morgan');
