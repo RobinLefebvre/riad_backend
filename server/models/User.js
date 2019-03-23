@@ -39,12 +39,15 @@ module.exports = class User
         {
             if(user[attribute] == value)
             {
-                resp = new User(user.id, user.name, user.pass);
+                resp = new User(user.id, user.name, user.pass, user.mail);
             }
         });
         return resp;
     }
-
+    static getByID(id)
+    {
+        return Users[id];
+    }
     static login(data, response)
     {
         let validData = User.validate(data);
