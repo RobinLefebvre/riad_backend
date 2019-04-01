@@ -53,7 +53,7 @@ module.exports = class User
         let validData = User.validate(data);
         if(validData)
         {
-            let user = User.getBy("name", data.name);
+            let user = User.getBy("mail", data.mail);
             if(user)
             {
                 bcrypt.compare(data.pass, user.pass, (error, res) => 
@@ -123,7 +123,7 @@ module.exports = class User
             {
                 delete data[attr]; // Delete any keys that doesn't fit schema
             }
-            if(data[attr].toString().trim === "")
+            if(data[attr].toString().trim() === "")
             {
                ret = false;
             }
