@@ -2,6 +2,7 @@
 const routes = [];
 routes.push( {name : '/users', ref : require("./server/routes/users") } );
 routes.push( {name : '/posts', ref : require("./server/routes/posts") } );
+routes.push( {name : '/works', ref : require("./server/routes/artworks") } );
 
 const express = require('express');
 const LOG = require('morgan');
